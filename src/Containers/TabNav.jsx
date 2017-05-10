@@ -7,18 +7,14 @@ import TzTheme from '../style/TzTheme.js';
 let TabStyle=TzTheme.bottomNavigation;
 
 const TabNav = (props) => {
-  let {data,path,history}=props;
-  let index=data.findIndex((item,key)=>{
-    return item.path==path;
-  })
-  console.log(index)
+  let {data}=props;
   return (
       <Paper zDepth={1}>
-        <BottomNavigation selectedIndex={index}>
+        <BottomNavigation selectedIndex={props.index}>
           {data.map((item,key)=>(
             <BottomNavigationItem key={key}
               icon={<FontIcon style={{fontSize:TabStyle.iconFontSize}}  className={'icon '+item.icon}></FontIcon>}
-              onTouchTap={() =>{history.push(item.path)}}
+              onTouchTap={() =>{props.onTouchTap(item)}}
             />
           ))}
         </BottomNavigation>

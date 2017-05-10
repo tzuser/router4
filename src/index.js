@@ -11,6 +11,9 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from './reducers/reducers.js' // Or wherever you keep your reducers
 
+import 'babel-polyfill';//兼容IE 和苹果浏览器 Array.from等
+
+
 import injectTapEventPlugin from "react-tap-event-plugin";
 injectTapEventPlugin();
 

@@ -5,11 +5,10 @@ export default {
 		height:45,
 		fontSize:18
 	}, 
-
 	bottomNavigation:{
-		backgroundColor: red700,
-      	unselectedColor: red200,
-      	selectedColor: red50,
+		/*backgroundColor: red700,*/
+      	/*unselectedColor: red200,*/
+      	selectedColor: red700,
 		height:50,
 		unselectedFontSize: 11,
       	selectedFontSize: 13,

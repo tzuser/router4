@@ -8,8 +8,8 @@ import AppBar from 'material-ui/AppBar';
 import TabNav from './TabNav.jsx';
 import Home from './Home.jsx';
 import User from './User.jsx';
-
-
+import Fixed from '../Components/Fixed.jsx';
+import Content from '../Components/Content.jsx';
 const Tab=(props)=>{
   let tabData=[{title:'Home',icon:'i-x-mpg',path:'/tab/home'},{title:'Type',icon:'i-icon2',path:'/tab/type'},{title:'User',icon:'i-geren',path:'/tab/user'}];
   let {match,location,history}=props;
@@ -21,10 +21,14 @@ const Tab=(props)=>{
   let title=tabData[index].title;
   return (
   <div>
-    <AppBar title={title} />
-    <TabNav data={tabData} index={index} onTouchTap={(item)=>{history.push(item.path)}} />
-    <Route path="/tab/home" component={Home} />
-    <Route path="/tab/user" component={User} />
+    <Fixed style={{top:0}}>
+      <AppBar title={title} />
+    </Fixed>
+      <Route path="/tab/home" component={Home} />
+      <Route path="/tab/user" component={User} />
+    <Fixed style={{bottom:0}}>
+      <TabNav data={tabData} index={index} onTouchTap={(item)=>{history.push(item.path)}} />
+    </Fixed>
   </div>
   )
 }

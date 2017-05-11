@@ -12,9 +12,7 @@ const App = () => (
   <Router>
       <MuiThemeProvider muiTheme={getMuiTheme(TzTheme)}>
         <div>
-	        <Route exact path="/" render={() => (
-		        <Redirect to="/tab/home"/>
-		    )} />
+	        <Redirect from="/" to="/tab/home"/>
         	<Route path="/tab" component={Tab} />
         </div>
       </MuiThemeProvider>

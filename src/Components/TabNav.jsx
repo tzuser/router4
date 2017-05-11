@@ -6,22 +6,19 @@ import FontIcon from 'material-ui/FontIcon';
 import TzTheme from '../style/TzTheme.js';
 let TabStyle=TzTheme.bottomNavigation;
 
-const TabNav = () => (
+const TabNav = (props) => {
+  let {data}=props;
+  return (
       <Paper zDepth={1}>
-        <BottomNavigation selectedIndex={0}>
-          <BottomNavigationItem
-            icon={<FontIcon style={{fontSize:TabStyle.iconFontSize}} className={'icon i-x-mpg'}></FontIcon>}
-            onTouchTap={() =>{console.log('tz')}}
-          />
-          <BottomNavigationItem
-            icon={<FontIcon style={{fontSize:TabStyle.iconFontSize}} className={'icon i-icon2'}></FontIcon>}
-            onTouchTap={() =>{console.log('tz')}}
-          />
-          <BottomNavigationItem
-            icon={<FontIcon style={{fontSize:TabStyle.iconFontSize}} className={'icon i-geren'}></FontIcon>}
-            onTouchTap={() =>{console.log('tz')}}
-          />
+        <BottomNavigation selectedIndex={props.index}>
+          {data.map((item,key)=>(
+            <BottomNavigationItem key={key}
+              icon={<FontIcon style={{fontSize:TabStyle.iconFontSize}}  className={'icon '+item.icon}></FontIcon>}
+              onTouchTap={() =>{props.onTouchTap(item)}}
+            />
+          ))}
         </BottomNavigation>
       </Paper>
-)
+      )
+}
 export default TabNav

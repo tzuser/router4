@@ -5,14 +5,13 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TzTheme from '../style/TzTheme.js';
 import AppBar from 'material-ui/AppBar';
 
-import TabNav from './TabNav.jsx';
 import Tab from './Tab.jsx';
 
 const App = () => (
   <Router>
       <MuiThemeProvider muiTheme={getMuiTheme(TzTheme)}>
         <div>
-	        <Redirect from="/" to="/tab/home"/>
+        	<Route exact path="/" render={() => ( <Redirect to="/tab/home" /> )}/>
         	<Route path="/tab" component={Tab} />
         </div>
       </MuiThemeProvider>

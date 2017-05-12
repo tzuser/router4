@@ -10,7 +10,7 @@ class Content extends Component{
 const styles={
   con:{
     width:'100%',
-    position:'absolute',
+    position:'fixed',
     overflow:'auto',
     top:0,
     bottom:0,

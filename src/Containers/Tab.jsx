@@ -3,9 +3,9 @@ import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import TzTheme from '../style/TzTheme.js';
-import AppBar from 'material-ui/AppBar';
+import {AppBar,FontIcon,IconButton} from 'material-ui';
 
-import TabNav from './TabNav.jsx';
+import TabNav from '../Components/TabNav.jsx';
 import Home from './Home.jsx';
 import User from './User.jsx';
 import Fixed from '../Components/Fixed.jsx';
@@ -22,7 +22,7 @@ const Tab=(props)=>{
   return (
   <div>
     <Fixed style={{top:0}}>
-      <AppBar title={title} />
+      <AppBar title={title} iconElementRight={<IconButton iconStyle={{fontSize:20}} ><i className={'icon i-sousuo_sousuo'} ></i></IconButton>} titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
     </Fixed>
       <Route path="/tab/home" component={Home} />
       <Route path="/tab/user" component={User} />

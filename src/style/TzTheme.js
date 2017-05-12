@@ -14,4 +14,7 @@ export default {
       	selectedFontSize: 13,
       	iconFontSize:24,
   	},
+  	spacing:{
+  		desktopGutterLess:8
+  	}
 }

@@ -23,7 +23,10 @@ const Tab=(props)=>{
   return (
   <div>
     <Fixed style={{top:0}}>
-      <AppBar title={title} iconElementRight={<IconButton iconStyle={{fontSize:20}} ><i className={'icon i-sousuo_sousuo'} ></i></IconButton>} titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+      <AppBar title={title} 
+      iconElementRight={<IconButton onTouchTap={(item)=>{history.push('/search')}} iconStyle={{fontSize:20}}  >
+      <i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
+      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
     </Fixed>
       <Route path="/tab/home" component={Home} />
       <Route path="/tab/type" component={Type} />

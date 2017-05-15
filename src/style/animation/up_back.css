@@ -1,0 +1,15 @@
+.enter{
+	transform:scale(0.8);
+}
+.enterActive{
+	transform:scale(1);
+	transition: all 0.4s;
+}
+.leave{
+  transform:translateY(0);
+  transition: all 0.4s;
+}
+.leaveActive{
+ 	transform:translateY(100%);
+	z-index: 1;
+}

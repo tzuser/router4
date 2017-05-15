@@ -1,0 +1,2 @@
+.page>div{position: fixed; top:0; bottom:0; left:0; right: 0; background: #fff}
+.btn{background:rgb(211, 47, 47); display: inline-block; width: 100%; color:#fff; text-align: center; line-height: 40px; border-radius: 20px;}

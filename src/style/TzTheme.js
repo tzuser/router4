@@ -29,4 +29,7 @@ export default {
       /*borderColor: palette.borderColor,*/
       focusColor: red500
     },
+    raisedButton:{
+      primaryColor: red700,
+    },
 }

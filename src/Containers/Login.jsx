@@ -7,7 +7,7 @@ import TzTheme from '../style/TzTheme.js';
 import Fixed from '../Components/Fixed.jsx';
 import {red700,red200,red500,red100,red50} from 'material-ui/styles/colors';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-import pubStyle from '../style/public.css';
+
 class Login extends Component{
 	render() {
 	let {match,history}=this.props;
@@ -19,11 +19,11 @@ class Login extends Component{
 		      iconElementRight={<FlatButton onTouchTap={(item)=>{history.replace('/register')}} label="注册" />} 
 		      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
 		    </Fixed>
-			<Content style={{top:46,bottom:50}}>
+			<Content style={{top:46,bottom:0}}>
 				<div style={styles.page}>
 					<TextField style={{marginBottom:10}} hintText="用户名" fullWidth={true} />
 					<TextField style={{marginBottom:20}} hintText="密码" type="password" fullWidth={true} />
-					<a className={pubStyle.btn}>登 录</a>
+					<a style={TzTheme.ellipseButton}>登 录</a>
 				</div>
 			</Content>
 		</RestoredScroll>

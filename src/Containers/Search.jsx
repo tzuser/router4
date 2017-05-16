@@ -20,7 +20,7 @@ class Search extends Component{
 		      iconStyle={{fontSize:20}}  ><i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
 		      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
 		    </Fixed>
-			<Content style={{top:46,bottom:50}}>
+			<Content style={{top:46,bottom:0}}>
 				
 				<Subheader>搜索历史</Subheader>
 				<div style={styles.wrapper}>

@@ -3,7 +3,7 @@ import {Route,Link,Redirect} from 'react-router-dom';
 import RestoredScroll from '../Components/RestoredScroll.jsx';
 import Content from '../Components/Content.jsx';
 import {AppBar,IconButton,TextField,Chip,Divider,Subheader} from 'material-ui';
-import TzTheme from '../style/TzTheme.js';
+import FrameTheme from '../style/FrameTheme.js';
 import Fixed from '../Components/Fixed.jsx';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import {red700,red200,red500,red100,red50} from 'material-ui/styles/colors';
@@ -18,7 +18,7 @@ class Search extends Component{
 		      iconElementLeft={<IconButton onTouchTap={()=>{history.goBack()}} ><NavigationClose /></IconButton>} 
 		      iconElementRight={<IconButton onTouchTap={(item)=>{console.log('搜索')}}
 		      iconStyle={{fontSize:20}}  ><i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
-		      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+		      titleStyle={{fontSize:FrameTheme.appBar.fontSize}} />
 		    </Fixed>
 			<Content style={{top:46,bottom:0}}>
 				

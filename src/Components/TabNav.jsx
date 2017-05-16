@@ -3,8 +3,8 @@ import {BottomNavigation, BottomNavigationItem} from 'material-ui/BottomNavigati
 import Paper from 'material-ui/Paper';
 
 import FontIcon from 'material-ui/FontIcon';
-import TzTheme from '../style/TzTheme.js';
-let TabStyle=TzTheme.bottomNavigation;
+import FrameTheme from '../style/FrameTheme.js';
+let TabStyle=FrameTheme.bottomNavigation;
 
 const TabNav = (props) => {
   let {data}=props;

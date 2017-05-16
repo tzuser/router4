@@ -2,7 +2,7 @@ import React,{Component} from 'react'
 import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import TzTheme from '../style/TzTheme.js';
+import FrameTheme from '../style/FrameTheme.js';
 import {AppBar,FontIcon,IconButton} from 'material-ui';
 
 import TabNav from '../Components/TabNav.jsx';
@@ -26,7 +26,7 @@ const Tab=(props)=>{
       <AppBar title={title} 
       iconElementRight={<IconButton onTouchTap={(item)=>{history.push('/search')}} iconStyle={{fontSize:20}}  >
       <i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
-      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+      titleStyle={{fontSize:FrameTheme.appBar.fontSize}} />
     </Fixed>
       <Route path="/tab/home" component={Home} />
       <Route path="/tab/type" component={Type} />

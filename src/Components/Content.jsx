@@ -1,12 +1,17 @@
 import React,{Component} from 'react';
-import TzThement from '../style/TzTheme.js';
 //内容
 class Content extends Component{
   render(){
     let {style}=this.props;
     let boxStyle=Object.assign({},styles.con,style);
+    boxStyle=Object.assign({},boxStyle,this.context.muiTheme.content);
+    console.log(boxStyle)
     return (<div style={boxStyle}>{this.props.children}</div>)
   }
+}
+
+Content.contextTypes={
+  muiTheme: React.PropTypes.object.isRequired
 }
 const styles={
   con:{
@@ -17,8 +22,7 @@ const styles={
     bottom:0,
     left:0,
     right:0,
-    zIndex:1,
-    ...TzThement.content
+    zIndex:1
   }
 }
 export default Content

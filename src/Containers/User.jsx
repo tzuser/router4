@@ -8,7 +8,7 @@ import ActionInfo from 'material-ui/svg-icons/action/info';
 
 import {FontIcon,IconButton,FlatButton,Avatar,Paper} from 'material-ui';
 import AttrIcon from '../Components/AttrIcon.jsx';
-const User=()=>(
+const User=({history})=>(
 	<RestoredScroll id='user'>
 		<Content style={{top:46,bottom:50}}>
 		 	<div style={{height:80,padding:15,display:'flex', alignItems:'center',justifyContent:'space-between'}} >
@@ -16,7 +16,7 @@ const User=()=>(
 					<Avatar size={50} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494621918203&di=6cd4437216ed0589a20e7c18f026685a&imgtype=0&src=http%3A%2F%2Fpic.uzzf.com%2Fup%2F2017-3%2F20173231352342415.png"  />
 					<div style={{marginLeft:10}} ><div>tzuser</div><small>lv5</small></div>
 				</div>
-				<IconButton>
+				<IconButton onTouchTap={(item)=>{history.push('/login')}}>
 				     <AttrIcon icon='i-shezhi1' />
 				</IconButton>
 			</div>

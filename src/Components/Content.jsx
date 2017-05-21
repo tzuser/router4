@@ -1,11 +1,19 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types'; 
+import {Paper } from 'material-ui';
+
 //内容
 class Content extends Component{
   render(){
     let {style}=this.props;
     let boxStyle=Object.assign({},styles.con,style);
-    return (<div style={boxStyle}>{this.props.children}</div>)
+ 
+    return (<Paper style={boxStyle}>{this.props.children}</Paper>)
   }
+}
+
+Content.contextTypes={
+  muiTheme: PropTypes.object.isRequired
 }
 const styles={
   con:{

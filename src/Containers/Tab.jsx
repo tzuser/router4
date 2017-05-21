@@ -2,9 +2,9 @@ import React,{Component} from 'react'
 import {BrowserRouter as Router,Route,Link,Redirect} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import TzTheme from '../style/TzTheme.js';
-import {AppBar,FontIcon,IconButton} from 'material-ui';
+import {FontIcon,IconButton} from 'material-ui';
 
+import Header from '../Components/Header.jsx';
 import TabNav from '../Components/TabNav.jsx';
 import Home from './Home.jsx';
 import User from './User.jsx';
@@ -23,10 +23,9 @@ const Tab=(props)=>{
   return (
   <div>
     <Fixed style={{top:0}}>
-      <AppBar title={title} 
+      <Header title={title} 
       iconElementRight={<IconButton onTouchTap={(item)=>{history.push('/search')}} iconStyle={{fontSize:20}}  >
-      <i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
-      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+      <i className={'icon i-sousuo_sousuo'} ></i></IconButton>} />
     </Fixed>
       <Route path="/tab/home" component={Home} />
       <Route path="/tab/type" component={Type} />

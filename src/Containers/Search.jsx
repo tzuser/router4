@@ -1,27 +1,26 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types'; 
 import {Route,Link,Redirect} from 'react-router-dom';
 import RestoredScroll from '../Components/RestoredScroll.jsx';
 import Content from '../Components/Content.jsx';
-import {AppBar,IconButton,TextField,Chip,Divider,Subheader} from 'material-ui';
-import TzTheme from '../style/TzTheme.js';
+import {IconButton,TextField,Chip,Divider,Subheader} from 'material-ui';
 import Fixed from '../Components/Fixed.jsx';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import {red700,red200,red500,red100,red50} from 'material-ui/styles/colors';
-
+import Header from '../Components/Header.jsx';
 class Search extends Component{
 	render() {
 	let {match,history}=this.props;
+	let {muiTheme}=this.context;
 	return(
 		<RestoredScroll id='type'>
 			<Fixed style={{top:0}}>
-		      <AppBar title={<TextField inputStyle={{color:red50}} hintStyle={{color:red100}} hintText="搜索" />}   
+		      <Header title={<TextField {...muiTheme.appBarInput}  hintText="搜索" />}   
 		      iconElementLeft={<IconButton onTouchTap={()=>{history.goBack()}} ><NavigationClose /></IconButton>} 
 		      iconElementRight={<IconButton onTouchTap={(item)=>{console.log('搜索')}}
 		      iconStyle={{fontSize:20}}  ><i className={'icon i-sousuo_sousuo'} ></i></IconButton>} 
-		      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+		       />
 		    </Fixed>
-			<Content style={{top:46,bottom:50}}>
-				
+			<Content style={{top:46,bottom:0}}>
 				<Subheader>搜索历史</Subheader>
 				<div style={styles.wrapper}>
 					<Chip onRequestDelete={()=>{console.log('删除')}} style={styles.chip} >React</Chip>
@@ -32,7 +31,6 @@ class Search extends Component{
 				</div>
 				<Divider />
 				<Subheader>热门搜索</Subheader>
-				
 				<div style={styles.wrapper}>
 					<Chip style={styles.chip} >React</Chip>
 					<Chip style={styles.chip} >Redux</Chip>
@@ -45,7 +43,9 @@ class Search extends Component{
 	)
 	}
 }
-
+Search.contextTypes={
+	muiTheme:PropTypes.object.isRequired
+}
 const styles = {
 	chip: {
 	    margin: 4,

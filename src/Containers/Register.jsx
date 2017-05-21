@@ -1,37 +1,40 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types'; 
 import {Route,Link,Redirect} from 'react-router-dom';
 import RestoredScroll from '../Components/RestoredScroll.jsx';
 import Content from '../Components/Content.jsx';
-import {AppBar,IconButton,TextField,Divider,Subheader,FlatButton,RaisedButton} from 'material-ui';
-import TzTheme from '../style/TzTheme.js';
+import {IconButton,TextField,Divider,Subheader,FlatButton,RaisedButton} from 'material-ui';
 import Fixed from '../Components/Fixed.jsx';
 import {red700,red200,red500,red100,red50} from 'material-ui/styles/colors';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
-import pubStyle from '../style/public.css';
+import Header from '../Components/Header.jsx';
 class Login extends Component{
 	render() {
 	let {match,history}=this.props;
+	let {muiTheme}=this.context;
 	return(
 		<RestoredScroll id='type'>
 			<Fixed style={{top:0}}>
-		      <AppBar title="注册"   
+		      <Header title="注册"   
 		      iconElementLeft={<IconButton onTouchTap={()=>{history.goBack()}} ><ArrowBack /></IconButton>} 
 		      iconElementRight={<FlatButton onTouchTap={(item)=>{history.replace('/login')}} label="登录" />} 
-		      titleStyle={{fontSize:TzTheme.appBar.fontSize}} />
+		       />
 		    </Fixed>
-			<Content style={{top:46,bottom:50}}>
+			<Content style={{top:46,bottom:0}}>
 				<div style={styles.page}>
 					<TextField style={{marginBottom:10}} hintText="用户名" fullWidth={true} />
 					<TextField style={{marginBottom:10}} hintText="密码" type="password" fullWidth={true} />
 					<TextField style={{marginBottom:20}} hintText="重复密码" type="password" fullWidth={true} />
-					<a className={pubStyle.btn}>注 册</a>
+					<a style={muiTheme.ellipseButton}>注 册</a>
 				</div>
 			</Content>
 		</RestoredScroll>
 	)
 	}
 }
-
+Login.contextTypes={
+	muiTheme:PropTypes.object.isRequired
+}
 const styles = {
 	page:{
 		padding:20,

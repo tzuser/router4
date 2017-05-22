@@ -24,23 +24,24 @@ class User extends Component{
 								<Avatar size={50} src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1494621918203&di=6cd4437216ed0589a20e7c18f026685a&imgtype=0&src=http%3A%2F%2Fpic.uzzf.com%2Fup%2F2017-3%2F20173231352342415.png"  />
 								<div style={{marginLeft:10}} ><div>tzuser</div><small>lv5</small></div>
 							</div>
-							<IconButton onTouchTap={(item)=>{history.push('/login')}}>
+							<IconButton disabled={true} onTouchTap={(item)=>{history.push('/login')}}>
 							     <AttrIcon icon='i-shezhi1' />
 							</IconButton>
 						</div>
 						<Divider />
-						<List>
-					     <ListItem primaryText="我的消息" leftIcon={<AttrIcon icon='i-icon066' />} />
-					     <ListItem primaryText="会员中心" leftIcon={<AttrIcon icon='i-huiyuan1' />} />
-					     <ListItem primaryText="商城" leftIcon={<AttrIcon icon='i-cart_icon' />} />
-					     <ListItem primaryText="免费试看" leftIcon={<AttrIcon icon='i-mianfeiquan' />} />
-					   </List>
+						{/*<List>
+					     <ListItem disabled={true} primaryText="我的消息" leftIcon={<AttrIcon icon='i-icon066' />} />
+					     <ListItem disabled={true} primaryText="会员中心" leftIcon={<AttrIcon icon='i-huiyuan1' />} />
+					     <ListItem disabled={true} primaryText="商城" leftIcon={<AttrIcon icon='i-cart_icon' />} />
+					     <ListItem disabled={true} primaryText="免费试看" leftIcon={<AttrIcon icon='i-mianfeiquan' />} />
+					   </List>*/}
 					   <Divider />
 					   <List>
 					     <ListItem onTouchTap={()=>{history.push('/theme')}} primaryText="个性换肤" leftIcon={<AttrIcon icon='i-skin' />} />
-					     <ListItem primaryText="推荐" leftIcon={<AttrIcon icon='i-tuijian' />} />
+					     {/*<ListItem primaryText="推荐" leftIcon={<AttrIcon icon='i-tuijian' />} />*/}
 					   </List>
 					   <Divider />
+
 					   <ListItem primaryText={<Toggle
 			            name="disableYearSelection"
 			            value="disableYearSelection"
@@ -50,6 +51,10 @@ class User extends Component{
 			          />
 			      }  />
 					   
+					   <Divider />
+					   <List>
+					     <ListItem onTouchTap={(item)=>{history.push('/login')}}  primaryText="退出登录" />
+					   </List>
 					   <Divider />
 					   <List>
 					     <ListItem primaryText="如何充值" rightIcon={<ActionInfo />} />

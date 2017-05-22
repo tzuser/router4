@@ -58,6 +58,7 @@ class Theme extends Component{
 	)
 	}
 }
+
 Theme.contextTypes={
 	muiTheme:PropTypes.object.isRequired
 }

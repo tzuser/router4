@@ -7,7 +7,7 @@ class PageAnimation extends Component{
 		this.paths=[];
 		this.prePath=null;
 	}
-	getAnimation(pathname,action){
+	/*getAnimation(pathname,action){
 		let aniPaths=this.props.data;
 		let res={style:'defalut',isAni:false};
 		if(action=="PUSH" || action=="REPLACE"){
@@ -31,6 +31,27 @@ class PageAnimation extends Component{
 		}
 		this.prePath=pathname;
 		return res;
+	}*/
+	getAnimation(pathname,action){
+		let aniPaths=this.props.data;
+		let res={style:'defalut',isAni:false};
+		if(action=="PUSH" || action=="REPLACE"){
+			let aniItem=aniPaths.find((item)=>{
+				return item.path==pathname;
+			})
+			if(aniItem && aniItem.PUSH){
+				res={style:aniItem.PUSH,isAni:true};
+			}
+		}else if(action=="POP"){
+			let aniItem=aniPaths.find((item)=>{
+				return item.path==this.prePath;
+			})
+			if(aniItem && aniItem.POP){
+				res={style:aniItem.POP,isAni:false};
+			}
+		}
+		this.prePath=pathname;
+		return res;
 	}
 	render() {
 		return (
@@ -38,6 +59,7 @@ class PageAnimation extends Component{
 			<Route render={({location,history,match})=>{
 				let data=this.props.data;
 				let ani=this.getAnimation(location.pathname,history.action);//获取动画方式 {style:动画样式,isAni:是否有动画}
+				console.log(ani)
 				return (<CSSTransitionGroup
 					component="div"
 					className={this.props.className}

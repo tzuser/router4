@@ -24,7 +24,7 @@ class Login extends Component{
 				<div style={styles.page}>
 					<TextField style={{marginBottom:10}} hintText="用户名" fullWidth={true} />
 					<TextField style={{marginBottom:20}} hintText="密码" type="password" fullWidth={true} />
-					<a style={muiTheme.ellipseButton}>登 录</a>
+					<Link to="/tab/home" style={muiTheme.ellipseButton}>登 录</Link>
 				</div>
 			</Content>
 		</RestoredScroll>

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {BrowserRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom';
+import {HashRouter as Router,Route,Link,Redirect,Switch} from 'react-router-dom';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import DayTheme from '../style/DayTheme.js';
 import NightTheme from '../style/NightTheme.js';
